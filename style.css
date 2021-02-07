@@ -1,14 +1,14 @@
 /*
 Theme Name: Weightless
 Theme URI: https://github.com/CutlerMcMartin/weightless
-Author: TidyThemes
+Author: Marshalled Makers, LLC
 Author URI: https://marshalledmakers.com
-Description: Please read: tidythemes.com/concept. BlankSlate is the definitive WordPress HTML5 boilerplate starter theme. We've carefully constructed the most clean and minimalist theme possible for designers and developers to use as a base to build websites for clients or to build completely custom themes from scratch. Clean, simple, unstyled, semi-minified, unformatted, and valid code, SEO-friendly, jQuery-enabled, no programmer comments, standardized and as white label as possible, and most importantly, the CSS is reset for cross-browser-compatability and no intrusive visual CSS styles have been added whatsoever. A perfect skeleton theme. For support and suggestions, go to: https://github.com/tidythemes/blankslate/issues. Thank you.
-Version: 2019.1
+Description: An elegeantly sparse theme
+Version: 1.1
 License: GNU General Public License
 License URI: https://www.gnu.org/licenses/gpl.html
 Tags: one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
-Text Domain: blankslate
+Text Domain: weightless
 
 Weightless WordPress Theme © 2021 Marshalled Makers, LLC
 Weightless is distributed under the terms of the GNU GPL
@@ -16,12 +16,19 @@ Weightless is distributed under the terms of the GNU GPL
 Based off Blankslate by tidythemes:  http://tidythemes.com/
 */
 
+/* This section is for the CSS reset */
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
-    margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline
 }
 
 body {
-    line-height:1
+    line-height:1;
 }
 
 button {
@@ -37,7 +44,12 @@ blockquote,q {
 }
 
 blockquote:before,blockquote:after,q:before,q:after {
-    content:'';content:none}q{display:inline;font-style:italic
+    content:'';
+    content:none
+}
+
+q {
+    display:inline;font-style:italic
 }
 
 q:before {
@@ -49,7 +61,9 @@ q:after {
 }
 
 textarea,input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="search"],input[type="password"] {
-    -webkit-appearance:none;appearance:none;border-radius:0
+    -webkit-appearance:none;
+    appearance:none;
+    border-radius:0
 }
 
 table {
@@ -110,4 +124,110 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 
 .screen-reader-text {
     clip:rect(1px, 1px, 1px, 1px);position:absolute !important
+}
+
+
+/*--------------------------------------------------------------
+# Site Header
+--------------------------------------------------------------*/
+
+#branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#site-title h1 {
+    font-size: 1.5em;
+    margin: 35px 0 25px 0;
+}
+
+#site-title h1 a {
+    color: black;
+    text-decoration: none;
+}
+
+#site-title h1 a:hover {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+#site-description h2 {
+    font-size: 1.2em;
+    margin: 0 0 25px 0;
+}
+
+/*--------------------------------------------------------------
+# Menu Styling
+--------------------------------------------------------------*/
+
+.primary-menu{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px; /* Customizer? */
+}
+
+.primary-menu .menu-item-has-children ul{
+    display: none;
+    position: absolute;
+    padding-top: 20px;
+}
+
+.primary-menu .menu-item-has-children:hover ul {
+    display: grid;
+    row-gap: 5px;
+}
+
+#menu-main-nav > li > a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+}
+
+#menu-main-nav > li > a > .menu-item-containter {
+    padding: 10px;
+    border-bottom: 2px solid black;
+    margin: 4px;
+}
+
+#menu-main-nav > li > a > .menu-item-containter:hover {
+    border-bottom: 4px solid black;
+    margin-bottom: -4px;
+}
+
+#menu-main-nav > li.current-menu-item > a > .menu-item-containter {
+    border-bottom: 4px solid black;
+    margin-bottom: -4px;
+}
+
+/*--------------------------------------------------------------
+# Content Styling
+--------------------------------------------------------------*/
+
+header.header h1 {
+    display: none;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    width: 75%;
+    max-width: 1250px;
+}
+
+/*--------------------------------------------------------------
+# Footer Styling
+--------------------------------------------------------------*/
+
+/* This puppy makes the sticky footer */
+#wrapper {
+    overflow-x: hidden;  
+	display: grid;
+	grid-template-rows: auto;
+	min-height: 100vh;
+	align-content: space-between;
 }
