@@ -22,9 +22,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     margin:0;
     padding:0;
     border:0;
-    font-size:100%;
+    font-size: 10px;
     font:inherit;
-    vertical-align:baseline
+    vertical-align:baseline;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -71,15 +72,7 @@ table {
 }
 
 th,td {
-    padding:2px
-}
-
-big {
-    font-size:120%
-}
-
-small,sup,sub {
-    font-size:80%
+    padding: 2px
 }
 
 sup {
@@ -91,11 +84,11 @@ sub {
 }
 
 dd {
-    margin-left:20px
+    margin-left: 2px
 }
 
 kbd,tt {
-    font-family:courier;font-size:12px
+    font-family:courier;font-size: 1.2em
 }
 
 ins {
@@ -123,7 +116,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 .screen-reader-text {
-    clip:rect(1px, 1px, 1px, 1px);position:absolute !important
+    clip:rect(1px, 1px, 1px, 1px);
+    position:absolute !important;
+}
+
+a {
+    color: black; /* Customizer? */
 }
 
 
@@ -138,9 +136,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     flex-direction: column;
 }
 
-#site-title h1 {
-    font-size: 1.5em;
+#site-title {
     margin: 35px 0 25px 0;
+}
+
+#site-title h1 {
+    font-size: 2.5em;
 }
 
 #site-title h1 a {
@@ -153,13 +154,16 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     border-bottom: 2px solid black;
 }
 
-#site-description h2 {
-    font-size: 1.2em;
+#site-description {
     margin: 0 0 25px 0;
 }
 
+#site-description h2 {
+    font-size: 1.2em;
+}
+
 /*--------------------------------------------------------------
-# Menu Styling
+# Main Menu Styling
 --------------------------------------------------------------*/
 
 .primary-menu{
@@ -176,33 +180,56 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 
 .primary-menu .menu-item-has-children:hover ul {
     display: grid;
-    row-gap: 5px;
+    margin-left: -16px;
+    
 }
 
-#menu-main-nav > li > a {
+.primary-menu > li > a {
     color: black;
     text-decoration: none;
-    border-bottom: 2px solid black;
 }
 
-#menu-main-nav > li > a > .menu-item-containter {
-    padding: 10px;
+.primary-menu > li > a > .menu-item-container {
+    padding: 16px;
     border-bottom: 2px solid black;
     margin: 4px;
 }
 
-#menu-main-nav > li > a > .menu-item-containter:hover {
+.primary-menu > li > a > .menu-item-container:hover {
     border-bottom: 4px solid black;
-    margin-bottom: -4px;
+    padding-top: 16px;
+    padding-bottom: 14px;
 }
 
-#menu-main-nav > li.current-menu-item > a > .menu-item-containter {
+.primary-menu > li.current-menu-item > a > .menu-item-container {
     border-bottom: 4px solid black;
-    margin-bottom: -4px;
+    padding-top: 16px;
+    padding-bottom: 14px;
 }
+
+.sub-menu{
+    padding-top: 22px;
+}
+
+.sub-menu > li {
+    background-color: white;
+    border: solid black 1px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sub-menu > li:hover {
+    background-color: #EEE;
+}
+
+.sub-menu > li > a {
+    text-decoration: none;
+}
+
 
 /*--------------------------------------------------------------
-# Content Styling
+# Basic Content Styling
 --------------------------------------------------------------*/
 
 header.header h1 {
@@ -215,8 +242,78 @@ header.header h1 {
 }
 
 #content {
-    width: 75%;
+    width: 70%;
     max-width: 1250px;
+    padding: 35px 0;
+}
+
+.entry-content {
+    margin: 26px 0;
+}
+
+/*--------------------------------------------------------------
+# Blog Styling
+--------------------------------------------------------------*/
+
+.post > header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.entry-title {
+    margin: 15px 0;
+    font-size: 1.6em;
+}
+
+.entry-meta {
+    margin-bottom: 12px;
+    font-style: italic;
+    font-size: .9em;
+}
+
+.entry-summary {
+    margin: 18px 32px;
+}
+
+article.post {
+    margin-bottom: 18px;
+}
+
+/*--------------------------------------------------------------
+# Comment Styling
+--------------------------------------------------------------*/
+.comments-title {
+    margin-bottom: 4px;
+}
+
+.comment-body > p {
+    margin: 8px 0;
+}
+
+#comments-list {
+    margin-bottom: 12px;
+}
+
+.form-submit {
+    margin: 12px 0;
+}
+
+.form-submit > #submit {
+    background: black;
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 0.9em;
+    border: solid black 1px;
+}
+
+.form-submit > #submit:hover {
+    background: rgba(116, 116, 116, 0.199);
+    border: none;
+    color: black;
+    border: solid black 1px;
 }
 
 /*--------------------------------------------------------------
@@ -230,4 +327,29 @@ header.header h1 {
 	grid-template-rows: auto;
 	min-height: 100vh;
 	align-content: space-between;
+}
+
+#footer {
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: center;
+}
+
+div.footer-menu {
+    margin: 15px;
+}
+
+.footer-menu > div > .footer-menu {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.footer-menu li.menu-item ul.sub-menu {
+    display: none;
+}
+
+.footer-credits-icons-container {
+    display: flex;
+    column-gap: 5px;
 }

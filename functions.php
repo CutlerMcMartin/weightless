@@ -15,6 +15,7 @@ function weightless_setup() {
     }
     
     register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'weightless' ) ) );
+    register_nav_menus( array( 'footer-menu' => esc_html__( 'Footer Menu', 'weightless' ) ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'weightless_load_scripts' );
@@ -158,31 +159,37 @@ class Weightless_Walker extends Walker_Nav_Menu {
 	// Displays start of an element. E.g '<li> Item Name'
     // @see Walker::start_el()
     function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
-    	$object = $item->object;
+        $object = $item->object;
     	$type = $item->type;
     	$title = $item->title;
     	$description = $item->description;
-    	$permalink = $item->url;
+        $permalink = $item->url;
 
-      $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
-        
-      //Add SPAN if no Permalink
-      if( $permalink && $permalink != '#' ) {
-      	$output .= '<a href="' . $permalink . '"><div class="menu-item-containter">';
-      } else {
-      	$output .= '<span><div class="menu-item-containter">';
-      }
-       
-      $output .= $title;
+        $menu_assigned = gettype($item->classes) != "string";
 
-      if( $description != '' && $depth == 0 ) {
-      	$output .= '<small class="description">' . $description . '</small>';
-      }
+        if( $menu_assigned ) {
 
-      if( $permalink && $permalink != '#' ) {
-      	$output .= '</div></a>';
-      } else {
-      	$output .= '</div></span>';
-      }
+            $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
+            
+            //Add SPAN if no Permalink
+            if( $permalink && $permalink != '#' ) {
+                $output .= '<a href="' . $permalink . '"><div class="menu-item-container">';
+            } else {
+                $output .= '<span><div class="menu-item-containter">';
+            }
+            
+            $output .= $title;
+
+            if( $description != '' && $depth == 0 ) {
+                $output .= '<small class="description">' . $description . '</small>';
+            }
+
+            if( $permalink && $permalink != '#' ) {
+                $output .= '</div></a>';
+            } else {
+                $output .= '</div></span>';
+            }
+        }
     }
+    
 }

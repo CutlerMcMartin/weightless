@@ -1,8 +1,17 @@
                 </div> <!-- .container-->
             </div> <!-- #anti-footer-->
             <footer id="footer">
-                <div id="copyright">
-                    &copy; <?php echo esc_html( date_i18n( __( 'Y', 'blankslate' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+                <div class="footer-credits-icons-container">
+                    <div class="footer-credits"> Cutler McMartin 2021</div>
+                    <div class="spacer">|</div>
+                    <div class="icons">F in kitty</div>
+                </div>
+                <div class="footer-menu">
+                <?php wp_nav_menu( array( 
+                    'theme_location'    => 'footer-menu',
+                    'menu_class'        => 'footer-menu',
+                    'walker'            => new Walker_Nav_Menu()
+                ) ); ?>
                 </div>
             </footer> <!-- .container-->
         </div> <!-- .wrapper-->
