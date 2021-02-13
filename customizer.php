@@ -2,11 +2,10 @@
 
 function weightless_customize_register($weightless_customize){
     
-    //This is the Navigation Bar Section
+    // This is the Color Section
 
-    $weightless_customize->add_section('navigation', array(
-        'title'         => __('Navigation Style', 'weightless'),
-        'description'   => sprintf(__('All editable elements for the main navigation bar.', 'weightless')),
+    $weightless_customize->add_section('color', array(
+        'title'         => __('Color', 'weightless'),
         'priority'      => 2
     ));
 
@@ -17,90 +16,49 @@ function weightless_customize_register($weightless_customize){
 
     $weightless_customize->add_control(new WP_Customize_Color_Control( $weightless_customize,'navigation_main_color', array(
        'label'       => __('Navigation Bar Color','weightless'),
-       'section'     => 'navigation',
+       'section'     => 'color',
        'priority'    => 2
     )));
 
-    $weightless_customize->add_setting('navigation_text_color', array(
-      'default'   => '#ffffff',
-      'type'      => 'theme_mod'
-  ));
+    // This is the Font Section
 
-    $weightless_customize->add_control(new WP_Customize_Color_Control( $weightless_customize,'navigation_text_color', array(
-        'label'       => __('Navigation Text Color','weightless'),
-        'section'     => 'navigation',
-        'priority'    => 3
-    )));
-
-    $weightless_customize->add_setting('nav_logo', array(
-        'default'   => null,
-        'type'      => 'theme_mod'
+    $weightless_customize->add_section('font', array(
+        'title'         => __('Font', 'weightless'),
+        'priority'      => 3
     ));
 
-    $weightless_customize->add_control(new WP_Customize_Image_Control($weightless_customize,'nav_logo',array(
-        'label'      => __( 'Upload a logo', 'weightless' ),
-        'section'    => 'navigation',
-        'settings'   => 'nav_logo',
-        'priority'    => 1 
-    )));
-
-    //This is the Footer Section
-
-    $weightless_customize->add_section('footer', array(
-        'title'         => __('Footer Style', 'weightless'),
-        'description'   => sprintf(__('Where to edit the colors on the footer.', 'weightless')),
-        'priority'      => 5
-    ));
-
-    $weightless_customize->add_setting('footer_main_color', array(
-        'default'   => '#000000',
-        'type'      => 'theme_mod'
-    ));
-
-    $weightless_customize->add_control(new WP_Customize_Color_Control( $weightless_customize,'footer_main_color', array(
-    'label'       => __('Footer Bar Color','weightless'),
-    'section'     => 'footer',
-    'priority'    => 2
-    )));
-
-    $weightless_customize->add_setting('footer_text_color', array(
-    'default'   => '#ffffff',
-    'type'      => 'theme_mod'
-    ));
-
-    $weightless_customize->add_control(new WP_Customize_Color_Control( $weightless_customize,'footer_text_color', array(
-        'label'       => __('Footer Text Color','weightless'),
-        'section'     => 'footer',
-        'priority'    => 3
-    )));
-
-    //This is the Body Section
-
-    $weightless_customize->add_section('body', array(
-        'title'         => __('Body Style', 'weightless'),
-        'description'   => sprintf(__('Where to edit the colors in the body.', 'weightless')),
-        'priority'      => 6
-    ));
-
-    $weightless_customize->add_setting('body_background_color', array(
-        'default'   => '#ffffff',
-        'type'      => 'theme_mod'
-    ));
-
-    $weightless_customize->add_control(new WP_Customize_Color_Control( $weightless_customize,'body_background_color', array(
-        'label'       => __('Body Background Color','weightless'),
-        'section'     => 'body',
-        'priority'    => 2
-    )));
-
-    $weightless_customize->add_setting('body_text_scheme', array(
+    $weightless_customize->add_setting('font', array(
         'default'   => 'light',
         'type'      => 'theme_mod'
     ));
 
-    $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'body_text_scheme', array(
+    $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'font', array(
+        'label'       => __('Font','weightless'),
+        'section'     => 'font',
+        'priority'    => 3,
+        'type'        => 'radio',
+        'choices'     => array(
+            'light'    => __( 'Light' ),
+            'dark'     => __( 'Dark' )
+        )
+    )));    
+
+    // This is the Footer Section
+
+    $weightless_customize->add_section('footer', array(
+        'title'         => __('Footer', 'weightless'),
+        'description'   => sprintf(__('Where to edit the colors on the footer.', 'weightless')),
+        'priority'      => 5
+    ));
+
+    $weightless_customize->add_setting('footer', array(
+        'default'   => 'light',
+        'type'      => 'theme_mod'
+    ));
+
+    $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'footer', array(
         'label'       => __('Body Text Scheme','weightless'),
-        'section'     => 'body',
+        'section'     => 'footer',
         'priority'    => 3,
         'type'        => 'radio',
         'choices'     => array(
@@ -109,28 +67,21 @@ function weightless_customize_register($weightless_customize){
         )
     )));
 
-    //This is the Font Section
+    // This is the Site Identity Section Additions
 
-    $weightless_customize->add_section('font', array(
-        'title'         => __('Fonts', 'weightless'),
-        'description'   => sprintf(__('Pick your font.', 'weightless')),
-        'priority'      => 7
-    ));
-
-    $weightless_customize->add_setting('site_font', array(
-        'default'   => 'arial',
+    $weightless_customize->add_setting('icon-display', array(
+        'default'   => 'display',
         'type'      => 'theme_mod'
     ));
 
-    $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'site_font', array(
-        'label'       => __('Site\'s','weightless'),
-        'section'     => 'font',
-        'priority'    => 1,
+    $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'icon-display', array(
+        'label'       => __('Site Icon Display Settings','weightless'),
+        'section'     => 'title_tagline',
+        'priority'    => 50,
         'type'        => 'radio',
         'choices'     => array(
-            'arial'    => __( 'Arial' ),
-            'trebuchet'    => __( 'Trebuchet' ),
-            'timesRoman'    => __( 'Times New Roman' )
+            'display'    => __( 'Display Icon' ),
+            'no-display'     => __( "Don't Display Icon" )
         )
     )));
 

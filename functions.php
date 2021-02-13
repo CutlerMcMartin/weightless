@@ -20,6 +20,9 @@ function weightless_setup() {
 
 add_action( 'wp_enqueue_scripts', 'weightless_load_scripts' );
 
+//Customizer File
+require get_template_directory(). '/customizer.php';
+
 function weightless_load_scripts() {
 
     wp_enqueue_style( 'weightless-style', get_stylesheet_uri() );
