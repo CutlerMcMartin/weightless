@@ -6,6 +6,7 @@ function weightless_setup() {
     
     load_theme_textdomain( 'weightless', get_template_directory() . '/languages' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'custom-logo' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'post-thumbnails' );
     
@@ -18,15 +19,16 @@ function weightless_setup() {
     register_nav_menus( array( 'footer-menu' => esc_html__( 'Footer Menu', 'weightless' ) ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'weightless_load_scripts' );
-
 //Customizer File
 require get_template_directory(). '/customizer.php';
+
+add_action( 'wp_enqueue_scripts', 'weightless_load_scripts' );
 
 function weightless_load_scripts() {
 
     wp_enqueue_style( 'weightless-style', get_stylesheet_uri() );
     wp_enqueue_script( 'jquery' );
+    wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/fontawesome/css/all.min.css' );
 
 }
 
@@ -109,14 +111,7 @@ function weightless_image_insert_override( $sizes ) {
 add_action( 'widgets_init', 'weightless_widgets_init' );
 
 function weightless_widgets_init() {
-    register_sidebar( array(
-    'name' => esc_html__( 'Sidebar Widget Area', 'weightless' ),
-    'id' => 'primary-widget-area',
-    'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-    'after_widget' => '</li>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-    ) );
+
 }
 
 add_action( 'wp_head', 'weightless_pingback_header' );
@@ -168,31 +163,29 @@ class Weightless_Walker extends Walker_Nav_Menu {
     	$description = $item->description;
         $permalink = $item->url;
 
-        $menu_assigned = gettype($item->classes) != "string";
 
-        if( $menu_assigned ) {
 
-            $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
-            
-            //Add SPAN if no Permalink
-            if( $permalink && $permalink != '#' ) {
-                $output .= '<a href="' . $permalink . '"><div class="menu-item-container">';
-            } else {
-                $output .= '<span><div class="menu-item-containter">';
-            }
-            
-            $output .= $title;
-
-            if( $description != '' && $depth == 0 ) {
-                $output .= '<small class="description">' . $description . '</small>';
-            }
-
-            if( $permalink && $permalink != '#' ) {
-                $output .= '</div></a>';
-            } else {
-                $output .= '</div></span>';
-            }
+        $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
+        
+        //Add SPAN if no Permalink
+        if( $permalink && $permalink != '#' ) {
+            $output .= '<a href="' . $permalink . '"><div class="menu-item-container">';
+        } else {
+            $output .= '<span><div class="menu-item-containter">';
         }
+        
+        $output .= $title;
+
+        if( $description != '' && $depth == 0 ) {
+            $output .= '<small class="description">' . $description . '</small>';
+        }
+
+        if( $permalink && $permalink != '#' ) {
+            $output .= '</div></a>';
+        } else {
+            $output .= '</div></span>';
+        }
+        
     }
     
 }
