@@ -160,6 +160,22 @@ function weightless_customize_register($weightless_customize){
         )
     )));
 
+    $weightless_customize->add_setting('tagline_display', array(
+        'default'   => 'display',
+        'type'      => 'theme_mod'
+    ));
+
+    $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'tagline_display', array(
+        'label'       => __('Display Tagline','weightless'),
+        'section'     => 'title_tagline',
+        'priority'    => 50,
+        'type'        => 'radio',
+        'choices'     => array(
+            'display'    => __( 'Display Tagline' ),
+            'no-display'     => __( "Don't Display Tagline" )
+        )
+    )));
+
 }
 
 
@@ -187,7 +203,7 @@ function weightless_customize_css()
 
             /* Background Coloring Section */
 
-            body, textarea, .sub-menu > li, .sub-menu > li:hover  { 
+            body, textarea, .sub-menu > li { 
                 background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
             }
 
@@ -195,7 +211,6 @@ function weightless_customize_css()
                 color: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
             }
             
-
             /* Font Section */
 
             body {
@@ -210,7 +225,14 @@ function weightless_customize_css()
                 width: <?php echo get_theme_mod('logo_size', 520); ?>px;
             }
             
+            #site-description {
+                <?php if (get_theme_mod('tagline_display', 'display') == 'no-display') {echo 'display: none;';}  ?>
+            }
 
+            /* Footer Styling */
+            .footer-credits-icons-container{
+                <?php if ((get_theme_mod('footer_text_content', '') != '') and ((get_theme_mod('linkedin_url', '') != '') or (get_theme_mod('github_url', '') != '') or (get_theme_mod('instagram_url', '') != '') or (get_theme_mod('facebook_url', '') != ''))) { ?> grid-template-columns: 1fr 35px 1fr; <?php } ?>
+            }
 
          </style>
 
