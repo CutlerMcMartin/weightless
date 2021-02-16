@@ -33,10 +33,10 @@ function weightless_customize_register($weightless_customize){
        'priority'    => 2,
     )));
 
-    // This is the Font Section
+    // This is the Text Options Section
 
-    $weightless_customize->add_section('font', array(
-        'title'         => __('Font', 'weightless'),
+    $weightless_customize->add_section('text_options', array(
+        'title'         => __('Text Options', 'weightless'),
         'priority'      => 3
     ));
 
@@ -46,8 +46,8 @@ function weightless_customize_register($weightless_customize){
     ));
 
     $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'site_font', array(
-        'label'       => __('Site\'s','weightless'),
-        'section'     => 'font',
+        'label'       => __('Site\'s Font','weightless'),
+        'section'     => 'text_options',
         'priority'    => 1,
         'type'        => 'radio',
         'choices'     => array(
@@ -56,6 +56,24 @@ function weightless_customize_register($weightless_customize){
             'timesRoman'    => __( 'Times New Roman' )
         )
     )));
+
+    $weightless_customize->add_setting('text_line_height', array(
+        'default'   => 1.5,
+        'type'      => 'theme_mod'
+    ));
+
+    $weightless_customize->add_control( 'text_line_height', array(
+        'type'        => 'range',
+        'priority'    => 2,
+        'section'     => 'text_options',
+        'label'       => 'Text Line Height',
+        'input_attrs' => array(
+            'min'   => 1,
+            'max'   => 4,
+            'step'  => 0.1,
+            'style' => 'color: #0a0'
+        )
+    ));
 
     // This is the Footer Section
 
@@ -211,13 +229,17 @@ function weightless_customize_css()
                 color: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
             }
             
-            /* Font Section */
+            /* Text Options Section */
 
             body {
                 font-family: <?php 
-                    if (get_theme_mod('site_font', 'arial') == 'arial') {echo 'Arial, Helvetica, sans-serif !important';} 
-                    else if (get_theme_mod('site_font', 'arial') == 'timesRoman') {echo "'Times New Roman', Times, serif !important";} 
-                    else if (get_theme_mod('site_font', 'arial') == 'trebuchet') {echo "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important";}?>;
+                    if (get_theme_mod('site_font', 'arial') == 'arial') {echo 'Arial, Helvetica, sans-serif';} 
+                    else if (get_theme_mod('site_font', 'arial') == 'timesRoman') {echo "'Times New Roman', Times, serif";} 
+                    else if (get_theme_mod('site_font', 'arial') == 'trebuchet') {echo "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif";}?>;
+            }
+
+            main#content {
+                line-height: <?php echo get_theme_mod('text_line_height', 1.5); ?>;
             }
 
             /* Logo Size */
