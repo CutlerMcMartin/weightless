@@ -142,6 +142,18 @@ function weightless_customize_register($weightless_customize){
         'label' => __( 'Facebook Profile URL' )
     ));
 
+    $weightless_customize->add_setting( 'twitter_url', array(
+        'default' => '',
+        'type'      => 'theme_mod'
+    ));
+        
+    $weightless_customize->add_control( 'twitter_url', array(
+        'type' => 'text',
+        'section' => 'footer', 
+        'priority'    => 5,
+        'label' => __( 'Twitter Profile URL' )
+    ));
+
     // This is the Site Identity Section Additions
 
     $weightless_customize->add_setting('logo_size', array(
@@ -217,6 +229,10 @@ function weightless_customize_css()
 
             .form-submit > #submit { 
                 background: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
+            }
+
+            .social-footer-icons > svg {
+                fill: <?php echo get_theme_mod('content_color', '#000000'); ?>;
             }
 
             /* Background Coloring Section */

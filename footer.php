@@ -21,11 +21,12 @@
 
                     <?php if ((get_theme_mod('footer_text_content', '') != '') and ((get_theme_mod('linkedin_url', '') != '') or (get_theme_mod('github_url', '') != '') or (get_theme_mod('instagram_url', '') != '') or (get_theme_mod('facebook_url', '') != ''))) { ?> <div class="footer-spacer">|</div> <?php } ?>
                     
-                    <div class="footer-social-icons">
-                        <?php if (get_theme_mod('linkedin_url', '') != '') { ?> <a href="<?php echo get_theme_mod('linkedin_url', '') ?>"><i class="fab fa-linkedin-in"></i></a> <?php } ?>
-                        <?php if (get_theme_mod('github_url', '') != '') { ?> <a href="<?php echo get_theme_mod('github_url', '') ?>"><i class="fab fa-github"></i></a> <?php } ?>
-                        <?php if (get_theme_mod('instagram_url', '') != '') { ?> <a href="<?php echo get_theme_mod('instagram_url', '') ?>"><i class="fab fa-instagram"></i></a> <?php } ?>
-                        <?php if (get_theme_mod('facebook_url', '') != '') { ?> <a href="<?php echo get_theme_mod('facebook_url', '') ?>"><i class="fab fa-facebook-f"></i></a> <?php } ?>
+                    <div class="footer-social-icons-container">
+                        <?php if (get_theme_mod('linkedin_url', '') != '') { ?> <a href="<?php echo get_theme_mod('linkedin_url', '') ?>"><div class="social-footer-icons"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/linkedin-in-brands.svg") ?></div></a> <?php } ?>
+                        <?php if (get_theme_mod('github_url', '') != '') { ?> <a href="<?php echo get_theme_mod('github_url', '') ?>"><div class="social-footer-icons"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/github-alt-brands.svg") ?></div></a> <?php } ?>
+                        <?php if (get_theme_mod('instagram_url', '') != '') { ?> <a href="<?php echo get_theme_mod('instagram_url', '') ?>"><div class="social-footer-icons"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/instagram-brands.svg") ?></div></a> <?php } ?>
+                        <?php if (get_theme_mod('facebook_url', '') != '') { ?> <a href="<?php echo get_theme_mod('facebook_url', '') ?>"><div class="social-footer-icons"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/facebook-f-brands.svg") ?></div></a> <?php } ?>
+                        <?php if (get_theme_mod('twitter_url', '') != '') { ?> <a href="<?php echo get_theme_mod('twitter_url', '') ?>"><div class="social-footer-icons"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/twitter-brands.svg") ?></div></a> <?php } ?>
                     </div>
 
                 </div>
