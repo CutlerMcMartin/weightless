@@ -6,7 +6,7 @@ function weightless_customize_register($weightless_customize){
 
     $weightless_customize->add_section('color', array(
         'title'         => __('Color', 'weightless'),
-        'priority'      => 2
+        'priority'      => 20
     ));
 
     $weightless_customize->add_setting('content_color', array(
@@ -37,7 +37,7 @@ function weightless_customize_register($weightless_customize){
 
     $weightless_customize->add_section('text_options', array(
         'title'         => __('Text Options', 'weightless'),
-        'priority'      => 3
+        'priority'      => 21
     ));
 
     $weightless_customize->add_setting('site_font', array(
@@ -79,7 +79,7 @@ function weightless_customize_register($weightless_customize){
 
     $weightless_customize->add_section('footer', array(
         'title'         => __('Footer', 'weightless'),
-        'priority'      => 5
+        'priority'      => 22
     ));
 
     $weightless_customize->add_setting( 'footer_text_content', array(
