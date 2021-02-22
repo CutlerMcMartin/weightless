@@ -160,7 +160,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 .primary-menu{
     display: flex;
     justify-content: center;
-    column-gap: 10px; /* Customizer? */
+    column-gap: 10px;
 }
 
 .primary-menu .menu-item-has-children ul{
@@ -217,6 +217,64 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     width: 100%;
 }
 
+/*--------------------------------------------------------------
+# Main Menu Styling Mobile
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 600px) {
+
+    #main-menu {
+        position: fixed;
+        top: 0;
+    }
+
+    .primary-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-right: 3px solid black;
+        height: 100vh;
+    }
+
+    .primary-menu .menu-item-has-children ul{
+        display: flex;
+        flex-direction: column;
+        position: inherit;
+        padding-top: 0;
+    }
+    
+    .primary-menu > li > a {
+        text-decoration: none;
+    }
+    
+    .primary-menu > li > a > .menu-item-container {
+        margin: 0;
+    }
+    
+    .primary-menu > li.current-menu-item > a > .menu-item-container {
+        border-bottom: 2px solid black;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .sub-menu > li {
+        border: none;
+        border-bottom: 2px solid black;
+        background: none; 
+    }
+    
+    .sub-menu > li > a {
+        display: flex;
+        justify-content: left;
+        text-decoration: none;
+        padding: 15px;
+        margin-left: 15px;
+        font-size: 0.8rem;
+    }
+
+}
+
+  
 
 /*--------------------------------------------------------------
 # Basic Content Styling

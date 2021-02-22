@@ -235,10 +235,22 @@ function weightless_customize_css()
                 fill: <?php echo get_theme_mod('content_color', '#000000'); ?>;
             }
 
+            @media only screen and (max-width: 600px) {
+                .primary-menu {
+                    border-color: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
+                }
+            }
+
             /* Background Coloring Section */
 
             body, textarea, .sub-menu > li { 
                 background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
+            }
+
+            @media only screen and (max-width: 600px) {
+                #main-menu {
+                    background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
+                }
             }
 
             .form-submit > #submit {

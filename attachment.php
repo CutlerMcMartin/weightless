@@ -6,7 +6,7 @@
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="header">
-                <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+                <h1 class="entry-title"><?php the_title(); ?></h1> 
                 <?php get_template_part( 'entry', 'meta' ); ?>
                 <a href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" title="<?php printf( esc_html__( 'Return to %s', 'weightless' ), esc_html( get_the_title( $post->post_parent ), 1 ) ); ?>" rev="attachment"><?php printf( esc_html__( '%s Return to ', 'weightless' ), '<span class="meta-nav">&larr;</span>' ); ?><?php echo get_the_title( $post->post_parent ); ?></a>
                 <nav id="nav-above" class="navigation">
@@ -24,6 +24,7 @@
                 </div>
                 <div class="entry-caption"><?php if ( ! empty( $post->post_excerpt ) ) { the_excerpt(); } ?></div>
                 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+                <?php edit_post_link(); ?>
             </div>
         </article>
         <?php comments_template(); ?>

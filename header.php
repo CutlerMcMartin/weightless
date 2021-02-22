@@ -25,12 +25,13 @@
                     <div id="site-description"><h2><?php bloginfo( 'description' ); ?></h2></div>
                 </div>
                 <?php if (has_nav_menu('main-menu')) { ?>
-                    <nav id="menu">
-                    <?php wp_nav_menu( array( 
-                        'theme_location'    => 'main-menu',
-                        'menu_class'        => 'primary-menu',
-                        'walker'            => new Weightless_Walker()
-                    ) ); ?>
+                    <nav id="main-menu">
+                        <div class="mobile-menu-toggle"></div>
+                        <?php wp_nav_menu( array( 
+                            'theme_location'    => 'main-menu',
+                            'menu_class'        => 'primary-menu',
+                            'walker'            => new Weightless_Walker()
+                        ) ); ?>
                     </nav>
                 <?php } ?>
             </header>
