@@ -26,7 +26,7 @@
                 </div>
                 <?php if (has_nav_menu('main-menu')) { ?>
                     <nav id="main-menu">
-                        <div class="mobile-menu-toggle"></div>
+                        <div class="mobile-menu-toggle"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/bars-solid.svg") ?></div>
                         <?php wp_nav_menu( array( 
                             'theme_location'    => 'main-menu',
                             'menu_class'        => 'primary-menu',
