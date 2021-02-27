@@ -25,8 +25,11 @@
                     <div id="site-description"><h2><?php bloginfo( 'description' ); ?></h2></div>
                 </div>
                 <?php if (has_nav_menu('main-menu')) { ?>
+                    <div class="toggle-container">
+                        <div id="mobile-menu-toggle"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/bars-solid.svg") ?></div>
+                    </div>
                     <nav id="main-menu">
-                        <div class="mobile-menu-toggle"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/bars-solid.svg") ?></div>
+                        
                         <?php wp_nav_menu( array( 
                             'theme_location'    => 'main-menu',
                             'menu_class'        => 'primary-menu',

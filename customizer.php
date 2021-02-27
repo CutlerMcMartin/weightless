@@ -248,7 +248,7 @@ function weightless_customize_css()
             }
 
             @media only screen and (max-width: 600px) {
-                #main-menu {
+                .menu-main-nav-container{
                     background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
                 }
             }

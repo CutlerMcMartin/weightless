@@ -64,6 +64,7 @@ function weightless_footer_scripts() {
 
     </script>
     <?php
+    wp_enqueue_script( 'mobile-menu-toggle', get_template_directory_uri() . '/mobile-menu-toggle.js');
 }
 
 add_filter( 'document_title_separator', 'weightless_document_title_separator' );
