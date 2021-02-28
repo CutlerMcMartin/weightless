@@ -253,6 +253,10 @@ function weightless_customize_css()
                 }
             }
 
+            #mobile-menu-toggle {
+                background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
+            }
+
             .form-submit > #submit {
                 color: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
             }

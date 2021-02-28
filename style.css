@@ -183,6 +183,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     padding: 16px;
     border-bottom: 2px solid black;
     margin: 4px;
+    white-space: nowrap;
 }
 
 .primary-menu > li > a > .menu-item-container:hover {
@@ -291,17 +292,18 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 
     #mobile-menu-toggle {
         display: block;
-        
     }
 
     #main-menu.toggled, .menu-main-nav-container.toggled {
+        max-width: 75vw;
         box-shadow: 100vw 0px 0px 100vw rgba(0,0,0,0.45);
-        transition: 1s;
+        transition: 0.75s;
     }
 
     #main-menu, .menu-main-nav-container{
+        max-width: 0px;
         box-shadow: 100vw 0px 0px 100vw rgba(0,0,0,0);
-        transition: 1s;
+        transition: 0.75s;
     }
 
 }
