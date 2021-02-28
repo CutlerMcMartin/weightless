@@ -219,11 +219,11 @@ function weightless_customize_css()
          <style type="text/css">
 
             /* Content Coloring Section */
-            body, a, #site-title h1 a, #site-title h1 a:hover, .primary-menu > li > a, .form-submit > #submit:hover, textarea { 
+            body, a, #site-title h1 a, #site-title h1 a:hover, .primary-menu > li > a, .form-submit > #submit:hover, textarea, #commentform input { 
                 color: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
             }
 
-            .primary-menu > li > a > .menu-item-container, .primary-menu > li > a > .menu-item-container:hover, .primary-menu > li.current-menu-item > a > .menu-item-container, #site-title h1 a:hover, .sub-menu > li, .form-submit > #submit, .form-submit > #submit:hover, textarea { 
+            .primary-menu > li > a > .menu-item-container, .primary-menu > li > a > .menu-item-container:hover, .primary-menu > li.current-menu-item > a > .menu-item-container, #site-title h1 a:hover, .sub-menu > li, .form-submit > #submit, .form-submit > #submit:hover, textarea, #commentform input { 
                 border-color: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
             }
 
@@ -243,7 +243,7 @@ function weightless_customize_css()
 
             /* Background Coloring Section */
 
-            body, textarea, .sub-menu > li { 
+            body, textarea, .sub-menu > li, #mobile-menu-toggle, .form-submit > #submit:hover, #commentform input{ 
                 background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
             }
 
@@ -251,10 +251,6 @@ function weightless_customize_css()
                 .menu-main-nav-container{
                     background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
                 }
-            }
-
-            #mobile-menu-toggle {
-                background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
             }
 
             .form-submit > #submit {
@@ -286,6 +282,12 @@ function weightless_customize_css()
             /* Footer Styling */
             .footer-credits-icons-container{
                 <?php if ((get_theme_mod('footer_text_content', '') != '') and ((get_theme_mod('linkedin_url', '') != '') or (get_theme_mod('github_url', '') != '') or (get_theme_mod('instagram_url', '') != '') or (get_theme_mod('facebook_url', '') != ''))) { ?> grid-template-columns: 1fr 35px 1fr; <?php } ?>
+            }
+
+            @media only screen and (max-width: 600px) {
+                .footer-credits-icons-container {
+                    grid-template-columns: 1fr;
+                }
             }
 
          </style>

@@ -19,96 +19,101 @@ Based off Blankslate by tidythemes:  http://tidythemes.com/
 /* This section is for the CSS reset */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
-    margin:0;
-    padding:0;
-    border:0;
-    font-size: 10px;
-    font:inherit;
-    vertical-align:baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size:  10px;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 button {
-    outline:0
+    outline: 0;
 }
 
 ol,ul {
-    list-style:none
+    list-style: none;
 }
 
 blockquote,q {
-    quotes:none
+    quotes: none;
 }
 
 blockquote:before,blockquote:after,q:before,q:after {
-    content:'';
-    content:none
+    content: '';
+    content: none;
 }
 
 q {
-    display:inline;font-style:italic
+    display: inline;
+    font-style: italic;
 }
 
 q:before {
-    content:'"';font-style:normal
+    content: '"';
+    font-style: normal;
 }
 
 q:after {
-    content:'"';font-style:normal
+    content: '"';
+    font-style: normal;
 }
 
 textarea,input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="search"],input[type="password"] {
-    -webkit-appearance:none;
-    appearance:none;
-    border-radius:0
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
 }
 
 table {
-    border-collapse:collapse;border-spacing:0
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 th,td {
-    padding: 2px
+    padding: 2px;
 }
 
 sup {
-    vertical-align:super
+    vertical-align: super;
 }
 
 sub {
-    vertical-align:sub
+    vertical-align: sub;
 }
 
 dd {
-    margin-left: 2px
+    margin-left: 2px;
 }
 
 ins {
-    text-decoration:underline
+    text-decoration: underline;
 }
 
 del,strike,s {
-    text-decoration:line-through
+    text-decoration: line-through;
 }
 
 dt {
-    font-weight:bold
+    font-weight: bold;
 }
 
 address,cite,var {
-    font-style:italic
+    font-style: italic;
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-    display:block
+    display: block;
 }
 
 * {
-    box-sizing:border-box;-webkit-tap-highlight-color:transparent
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .screen-reader-text {
-    clip:rect(1px, 1px, 1px, 1px);
-    position:absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
 }
 
 
@@ -127,6 +132,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 
 #site-title {
     margin: 35px 0 25px 0;
+    text-align: center;
 }
 
 #site-title h1 {
@@ -142,7 +148,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 #site-description {
-    margin: 0 0 25px 0;
+    margin-bottom: 25px;
 }
 
 #site-description h2 {
@@ -151,6 +157,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 
 .custom-logo {
     height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    #site-title {
+        margin: 45px 10px 25px 10px;
+    }
+
+    #site-title h1 {
+        font-size: 2em;
+    }
+
+    #site-description {
+        margin-bottom: 0;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -172,7 +192,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 .primary-menu .menu-item-has-children:hover ul {
     display: grid;
     margin-left: -16px;
-    
 }
 
 .primary-menu > li > a {
@@ -309,9 +328,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 
-
-  
-
 /*--------------------------------------------------------------
 # Basic Content Styling
 --------------------------------------------------------------*/
@@ -333,6 +349,13 @@ header.header h1 {
 
 .entry-content {
     margin: 26px 0;
+}
+
+@media only screen and (max-width: 600px) {
+    #content {
+        width: 85%;
+        padding: 5px 0;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -380,6 +403,10 @@ article.post {
     margin-bottom: 12px;
 }
 
+textarea#comment {
+    max-width: 90%;
+}
+
 .form-submit {
     margin: 12px 0;
 }
@@ -391,7 +418,6 @@ article.post {
 }
 
 .form-submit > #submit:hover {
-    background: rgba(116, 116, 116, 0.199);
     border: solid black 1px;
 }
 
@@ -426,7 +452,9 @@ div.footer-menu {
 .footer-menu > div > .footer-menu {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     column-gap: 10px;
+    row-gap: 10px;
 }
 
 .footer-menu li.menu-item ul.sub-menu {
@@ -457,7 +485,19 @@ div.footer-menu {
 }
 
 .social-footer-icons > svg {
-    fill: green;
     width: 1.1rem;
     height: 1.1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-text-content {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .footer-social-icons-container {
+        justify-content: center;
+    }
+    .footer-spacer {
+        display: none;
+    }
 }
