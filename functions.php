@@ -131,12 +131,6 @@ function weightless_enqueue_comment_reply_script() {
     }
 }
 
-function weightless_custom_pings( $comment ) {
-    ?>
-    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
-    <?php
-}
-
 add_filter( 'get_comments_number', 'weightless_comment_count', 0 );
 
 function weightless_comment_count( $count ) {

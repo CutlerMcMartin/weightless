@@ -174,22 +174,6 @@ function weightless_customize_register($weightless_customize){
         )
     ));
 
-    $weightless_customize->add_setting('icon_display', array(
-        'default'   => 'display',
-        'type'      => 'theme_mod'
-    ));
-
-    $weightless_customize->add_control(new WP_Customize_Control( $weightless_customize,'icon_display', array(
-        'label'       => __('Site Icon Display Settings','weightless'),
-        'section'     => 'title_tagline',
-        'priority'    => 5000,
-        'type'        => 'radio',
-        'choices'     => array(
-            'display'    => __( 'Display Icon' ),
-            'no-display'     => __( "Don't Display Icon" )
-        )
-    )));
-
     $weightless_customize->add_setting('tagline_display', array(
         'default'   => 'display',
         'type'      => 'theme_mod'
@@ -293,11 +277,6 @@ function weightless_customize_css()
          </style>
 
     <?php
-
-    // Taking away the site header if it is not wanted. Controlled by "icon_display" setting
-    if (get_theme_mod('icon_display', 'display') == 'no-display') {
-        ?> <link rel="shortcut icon" type="image/jpg" href="#"/><?php
-    }
     
 }
 
