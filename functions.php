@@ -10,9 +10,9 @@ function weightless_setup() {
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'post-thumbnails' );
     
-    global $content_width;
-    if ( ! isset( $content_width ) ) { 
-        $content_width = 1920; 
+    global $weightless_content_width;
+    if ( ! isset( $weightless_content_width ) ) { 
+        $weightless_content_width = 1920; 
     }
     
     register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'weightless' ) ) );

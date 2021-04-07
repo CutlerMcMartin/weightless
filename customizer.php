@@ -53,7 +53,7 @@ function weightless_customize_register($weightless_customize){
         'choices'     => array(
             'arial'    => __( 'Arial' ),
             'trebuchet'    => __( 'Trebuchet' ),
-            'timesRoman'    => __( 'Times New Roman' )
+            'timesRoman'    => __( 'Times New Roman' ),
         )
     )));
 
