@@ -204,41 +204,41 @@ function weightless_customize_css()
 
             /* Content Coloring Section */
             body, a, #site-title h1 a, #site-title h1 a:hover, .primary-menu > li > a, .form-submit > #submit:hover, textarea, #commentform input { 
-                color: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
+                color: <?php echo esc_html(get_theme_mod('content_color', '#000000')); ?>; 
             }
 
             .primary-menu > li > a > .menu-item-container, .primary-menu > li > a > .menu-item-container:hover, .primary-menu > li.current-menu-item > a > .menu-item-container, #site-title h1 a:hover, .sub-menu > li, .form-submit > #submit, .form-submit > #submit:hover, textarea, #commentform input { 
-                border-color: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
+                border-color: <?php echo esc_html(get_theme_mod('content_color', '#000000')); ?>; 
             }
 
             .form-submit > #submit { 
-                background: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
+                background: <?php echo esc_html(get_theme_mod('content_color', '#000000')); ?>; 
             }
 
             .social-footer-icons > svg {
-                fill: <?php echo get_theme_mod('content_color', '#000000'); ?>;
+                fill: <?php echo esc_html(get_theme_mod('content_color', '#000000')); ?>;
             }
 
             @media only screen and (max-width: 600px) {
                 .primary-menu {
-                    border-color: <?php echo get_theme_mod('content_color', '#000000'); ?>; 
+                    border-color: <?php echo esc_html(get_theme_mod('content_color', '#000000')); ?>; 
                 }
             }
 
             /* Background Coloring Section */
 
             body, textarea, .sub-menu > li, #mobile-menu-toggle, .form-submit > #submit:hover, #commentform input{ 
-                background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
+                background: <?php echo esc_html(get_theme_mod('bkg_color', '#FFFFFF')); ?>; 
             }
 
             @media only screen and (max-width: 600px) {
                 .menu-main-nav-container{
-                    background: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
+                    background: <?php echo esc_html(get_theme_mod('bkg_color', '#FFFFFF')); ?>; 
                 }
             }
 
             .form-submit > #submit {
-                color: <?php echo get_theme_mod('bkg_color', '#FFFFFF'); ?>; 
+                color: <?php echo esc_html(get_theme_mod('bkg_color', '#FFFFFF')); ?>; 
             }
             
             /* Text Options Section */
@@ -251,12 +251,12 @@ function weightless_customize_css()
             }
 
             main#content {
-                line-height: <?php echo get_theme_mod('text_line_height', 1.5); ?>;
+                line-height: <?php echo esc_html(get_theme_mod('text_line_height', 1.5)); ?>;
             }
 
             /* Logo Size */
             .custom-logo {
-                width: <?php echo get_theme_mod('logo_size', 520); ?>px;
+                width: <?php echo esc_html(get_theme_mod('logo_size', 520)); ?>px;
             }
             
             #site-description {
