@@ -3,4 +3,4 @@
     'next_text' => sprintf( esc_html__( 'newer %s', 'weightless' ), '<span class="meta-nav">&rarr;</span>' )
 );
 
-the_posts_navigation( $weightless_args ); ?>
+the_posts_navigation( $weightless_args );

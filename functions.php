@@ -109,6 +109,32 @@ function weightless_comment_count( $count ) {
     }
 }
 
+// Used for escaping SVGs in the footer
+// https://wordpress.stackexchange.com/questions/312625/escaping-svg-with-kses
+function weightless_get_kses_extended_ruleset() {
+    $kses_defaults = wp_kses_allowed_html( 'post' );
+
+    $svg_args = array(
+        'svg'   => array(
+            'class'           => true,
+            'aria-hidden'     => true,
+            'aria-labelledby' => true,
+            'role'            => true,
+            'xmlns'           => true,
+            'width'           => true,
+            'height'          => true,
+            'viewbox'         => true, // <= Must be lower case!
+        ),
+        'g'     => array( 'fill' => true ),
+        'title' => array( 'title' => true ),
+        'path'  => array(
+            'd'    => true,
+            'fill' => true,
+        ),
+    );
+    return array_merge( $kses_defaults, $svg_args );
+}
+
 
 // Making the walker class for the Navigation Menu
 // Following code from https://www.ibenic.com/how-to-create-wordpress-custom-menu-walker-nav-menu-class/

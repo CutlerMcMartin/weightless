@@ -4,9 +4,6 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <meta name="viewport" content="width=device-width" />
         <?php wp_head(); ?>
-         <?php 
-    
-    ?>
     </head>
     <body <?php body_class(); ?>>
     <div id="wrapper" class="hfeed"> 
@@ -26,7 +23,7 @@
                 </div>
                 <?php if (has_nav_menu('main-menu')) { ?>
                     <div class="toggle-container">
-                        <div id="mobile-menu-toggle"><?php echo file_get_contents(get_template_directory_uri() . "/svgs/bars-solid.svg") ?></div>
+                        <div id="mobile-menu-toggle"><?php echo wp_kses(file_get_contents(get_template_directory_uri() . "/svgs/bars-solid.svg"), get_kses_extended_ruleset()) ?></div>
                     </div>
                     <nav id="main-menu">
                         
