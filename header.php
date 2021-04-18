@@ -23,7 +23,7 @@
                 </div>
                 <?php if (has_nav_menu('main-menu')) { ?>
                     <div class="toggle-container">
-                        <div id="mobile-menu-toggle"><?php echo wp_kses(file_get_contents(get_template_directory_uri() . "/svgs/bars-solid.svg"), get_kses_extended_ruleset()) ?></div>
+                        <div id="mobile-menu-toggle"><?php echo wp_kses(file_get_contents(get_template_directory_uri() . "/svgs/bars-solid.svg"), weightless_get_kses_extended_ruleset()) ?></div>
                     </div>
                     <nav id="main-menu">
                         
