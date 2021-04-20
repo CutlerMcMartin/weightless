@@ -1,0 +1,37 @@
+    REQUIRED: .wp-caption css class is needed in your theme css.
+    REQUIRED: .wp-caption-text css class is needed in your theme css.
+    REQUIRED: .sticky css class is needed in your theme css.
+    REQUIRED: .gallery-caption css class is needed in your theme css.
+    REQUIRED: .bypostauthor css class is needed in your theme css.
+    REQUIRED: .alignright css class is needed in your theme css.
+    REQUIRED: .alignleft css class is needed in your theme css.
+    REQUIRED: .aligncenter css class is needed in your theme css.
+    RECOMMENDED: This theme contains no sidebars/widget areas. See Widgets API
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Twitter Profile URL'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Trebuchet'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Times New Roman'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'LinkedIn Profile URL'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Instagram Profile URL'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'GitHub Profile URL'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Footer Text Content'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Facebook Profile URL'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Display Tagline'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Arial'
+    WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments "Don't Display Tagline"
+  
+    REQUIRED: Please remove any extraneous directories like .git or .svn from the ZIP file before uploading it.
+    
+    REQUIRED: No content width has been defined. Example:
+
+    if ( ! isset( $content_width ) ) $content_width = 900;
+
+    REQUIRED: Could not find wp_body_open action or function call at the very top of the body just after the opening body tag. See: wp_body_open
+
+     <?php wp_body_open(); ?>
+
+    REQUIRED: .ds_store Hidden Files or Folders found. This file must not be in a theme.
+    RECOMMENDED: No reference to add_theme_support( "custom-header", $args ) was found in the theme. It is recommended that the theme implement this functionality if using an image for the header.
+    RECOMMENDED: No reference to add_theme_support( "custom-background", $args ) was found in the theme. If the theme uses background images or solid colors for the background, then it is recommended that the theme implement this functionality.
+    RECOMMENDED: No reference to add_editor_style() was found in the theme. It is recommended that the theme implement editor styling, so as to make the editor content match the resulting post output in the theme, for a better user experience.
+    INFO: Only one text-domain is being used in this theme. Make sure it matches the theme's slug correctly so that the theme will be compatible with WordPress.org language packs.
+    The domain found is weightless
