@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width" />
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class(); ?>>
+    <body <?php body_class(); body_class(); ?>>
     <div id="wrapper" class="hfeed"> 
         <div id="anti-footer">
             <header id="header">

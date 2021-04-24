@@ -6,7 +6,6 @@
     REQUIRED: .alignright css class is needed in your theme css.
     REQUIRED: .alignleft css class is needed in your theme css.
     REQUIRED: .aligncenter css class is needed in your theme css.
-    RECOMMENDED: This theme contains no sidebars/widget areas. See Widgets API
     WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Twitter Profile URL'
     WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Trebuchet'
     WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments 'Times New Roman'
@@ -20,14 +19,9 @@
     WARNING: Found a translation function that is missing a text-domain. Function __, with the arguments "Don't Display Tagline"
   
     REQUIRED: Please remove any extraneous directories like .git or .svn from the ZIP file before uploading it.
-    
-    REQUIRED: No content width has been defined. Example:
-
-    if ( ! isset( $content_width ) ) $content_width = 900;
 
     REQUIRED: Could not find wp_body_open action or function call at the very top of the body just after the opening body tag. See: wp_body_open
 
-     <?php wp_body_open(); ?>
 
     REQUIRED: .ds_store Hidden Files or Folders found. This file must not be in a theme.
     RECOMMENDED: No reference to add_theme_support( "custom-header", $args ) was found in the theme. It is recommended that the theme implement this functionality if using an image for the header.
